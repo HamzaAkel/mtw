@@ -5,14 +5,84 @@
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
 
+[data-theme="light"] {
+  --bg-color: #f5f2eb;
+  --text-color: #1a1a1a;
+  --navbar-bg: #f5f2eb;
+  --link-color: #222222;
+  --link-hover: #000000;
+  --text-on-dark: white;
+  --btn-bg: #222;
+  --btn-text: white;
+  --btn-hover-bg: #333;
+  --btn-hover-text: #ddd;
+  --cta-bg: #222;
+  --cta-text: white;
+  --cta-border: #222;
+  --cta-hover-bg: #333;
+  --cta-hover-text: #ddd;
+  --gradient-edge-start: #f5f2eb;
+}
+
+[data-theme="dark"] {
+  --bg-color: black;
+  --text-color: white;
+  --navbar-bg: black;
+  --link-color: #d9ecff;
+  --link-hover: white;
+  --text-on-dark: white;
+  --btn-bg: white;
+  --btn-text: black;
+  --btn-hover-bg: #eee;
+  --btn-hover-text: #111;
+  --cta-bg: white;
+  --cta-text: black;
+  --cta-border: black;
+  --cta-hover-bg: #e5e5e5;
+  --cta-hover-text: #000;
+  --gradient-edge-start: black;
+}
+
 html,
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: black;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
+}
+
+.text-dynamic {
+  color: var(--text-color);
+}
+
+.text-on-dark {
+  color: var(--text-on-dark) !important;
+}
+
+/* Theme toggle simple lien */
+.theme-toggle-link {
+  cursor: pointer;
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-link:hover {
+  color: var(--link-hover);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navbar-bg);
+}
+
+.navbar .logo {
+  color: var(--link-color);
+}
+
+.navbar .logo:hover {
+  color: var(--link-hover);
 }
 
 section {
@@ -378,19 +448,19 @@ section {
 
 .gradient-edge:nth-of-type(1) {
   left: 0;
-  background: rgb(0, 0, 0);
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    var(--gradient-edge-start) 0%,
+    transparent 100%
   );
 }
+
 .gradient-edge:nth-of-type(2) {
   right: 0;
   background: linear-gradient(
     -90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    var(--gradient-edge-start) 0%,
+    transparent 100%
   );
 }
 

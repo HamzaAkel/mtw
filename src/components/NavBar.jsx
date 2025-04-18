@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import ThemeToggle from "./ThemeToggle";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,14 +22,17 @@ const NavBar = () => {
           Modern Tech Works
         </a>
 
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact Us</span>
-          </div>
-        </a>
+        <div className="flex items-center gap-4 " >
+          <ThemeToggle />
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact Us</span>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
   );
-}
+};
 
 export default NavBar;

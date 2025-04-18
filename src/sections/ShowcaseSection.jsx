@@ -56,7 +56,7 @@ const AppShowcase = () => {
               <h2>
               Real-time stock management. Ultra-precise tracking. Live inventory value. 
               </h2>
-              <p className="text-white-50 md:text-xl">
+              <p className=" md:text-xl ">
               Make your life easier with smart, effortless, and reliable stock control — anytime, anywhere.
               </p>
             </div>
